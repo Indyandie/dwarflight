@@ -1,0 +1,18 @@
+{
+  "nodeModulesDir": "auto",
+  "unstable": [
+    "node-globals"
+  ],
+  "imports": {
+    "fs": "node:fs",
+    "util": "node:util",
+    "https": "node:https",
+    "http": "node:http",
+    "os": "node:os",
+    "tty": "node:tty",
+    "path": "node:path",
+    "url": "node:url",
+    "worker_threads": "node:worker_threads",
+    "module": "node:module"
+  }
+}
