@@ -11,7 +11,8 @@ export default defineConfig({
         github: 'https://github.com/indyandie/dwarflight',
       },
       components: {
-        Head: './src/component/overrides/Head.astro' 
+        Head: './src/component/overrides/Head.astro',
+        PageFrame: './src/component/overrides/PageFrame.astro',
       },
       sidebar: [
         {

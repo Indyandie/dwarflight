@@ -1,0 +1,27 @@
+---
+import MobileMenuToggle from '@astrojs/starlight/components/MobileMenuToggle.astro'
+import type { Props } from '@astrojs/starlight/props'
+
+const { hasSidebar } = Astro.props
+---
+
+<header class="header">
+  <slot name="header" />
+</header>
+
+{
+  hasSidebar && (
+    <nav class="sidebar print:hidden" aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}>
+      <MobileMenuToggle {...Astro.props} />
+      <div id="starlight__sidebar" class="sidebar-pane">
+        <div class="sidebar-content sl-flex">
+          <slot name="sidebar" />
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+<div class="main-frame">
+  <slot />
+</div>
