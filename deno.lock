@@ -2,6 +2,7 @@
   "version": "4",
   "specifiers": {
     "npm:@astrojs/starlight@~0.31.1": "0.31.1_astro@5.2.5__vite@6.1.0__zod@3.24.1",
+    "npm:astro@5.2.5": "5.2.5_vite@6.1.0_zod@3.24.1",
     "npm:astro@^5.1.5": "5.2.5_vite@6.1.0_zod@3.24.1"
   },
   "npm": {
