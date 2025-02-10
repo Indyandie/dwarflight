@@ -8,16 +8,18 @@ const { hasSidebar } = Astro.props
 
 <header
   class="
+    sticky top-0
     flex items-center justify-between
     py-2 px-4
     border-b-1
     border-b-(--sl-color-gray-3)
+    bg-(--sl-color-black)
   "
 >
   <slot name="header" />
 </header>
 
-<div class="bg-amber-800 flex justify-between ">
+<div class="bg-amber-900 flex justify-between min-h-full">
   {
     hasSidebar && (
       <details open>
