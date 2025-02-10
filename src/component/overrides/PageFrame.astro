@@ -1,21 +1,34 @@
 ---
-import MobileMenuToggle from '@astrojs/starlight/components/MobileMenuToggle.astro'
+// import MobileMenuToggle from '@astrojs/starlight/components/MobileMenuToggle.astro'
+import MobileMenuToggle from './MobileMenuToggle.astro'
 import type { Props } from '@astrojs/starlight/props'
 
 const { hasSidebar } = Astro.props
 ---
 
-<header>
+<header
+  class="
+    flex items-center justify-between
+    py-2 px-4
+    border-b-1
+    border-b-(--sl-color-black)
+    dark:border-b-(--sl-color-white)
+  "
+>
   <slot name="header" />
 </header>
 
 {
   hasSidebar && (
-    <nav class="bg-blue-900">
-      <slot name="sidebar" />
-    </nav>
+    <details open>
+      <summary>
+        <MobileMenuToggle {...Astro.props} />
+      </summary>
 
-    <MobileMenuToggle {...Astro.props}/> 
+      <nav class="bg-blue-900">
+        <slot name="sidebar" />
+      </nav>
+    </details>
   )
 }
 
