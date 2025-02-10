@@ -13,6 +13,8 @@ export default defineConfig({
         Head: './src/component/overrides/Head.astro',
         PageFrame: './src/component/overrides/PageFrame.astro',
         TwoColumnContent: './src/component/overrides/TwoColumnContent.astro',
+        MobileMenuToggle: './src/component/overrides/MobileMenuToggle.astro',
+        Header: './src/component/overrides/Header.astro',
       },
       sidebar: [
         {
