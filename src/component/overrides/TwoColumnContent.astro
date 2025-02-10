@@ -1,0 +1,14 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+---
+
+<div class="main-pane">
+  {
+    Astro.props.toc && (
+      <aside class="bg-amber-700 relative">
+        <slot name="right-sidebar" />
+      </aside>
+    )
+  }
+  <slot />
+</div>

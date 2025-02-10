@@ -12,6 +12,7 @@ export default defineConfig({
       components: {
         Head: './src/component/overrides/Head.astro',
         PageFrame: './src/component/overrides/PageFrame.astro',
+        TwoColumnContent: './src/component/overrides/TwoColumnContent.astro',
       },
       sidebar: [
         {
