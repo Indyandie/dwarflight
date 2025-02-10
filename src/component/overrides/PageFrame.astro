@@ -11,27 +11,26 @@ const { hasSidebar } = Astro.props
     flex items-center justify-between
     py-2 px-4
     border-b-1
-    border-b-(--sl-color-black)
-    dark:border-b-(--sl-color-white)
+    border-b-(--sl-color-gray-3)
   "
 >
   <slot name="header" />
 </header>
 
-{
-  hasSidebar && (
-    <details open>
-      <summary>
-        <MobileMenuToggle {...Astro.props} />
-      </summary>
+<div class="bg-amber-800 flex justify-between ">
+  {
+    hasSidebar && (
+      <details open>
+        <summary>
+          <MobileMenuToggle {...Astro.props} />
+        </summary>
 
-      <nav class="bg-blue-900">
-        <slot name="sidebar" />
-      </nav>
-    </details>
-  )
-}
+        <nav class="bg-blue-900">
+          <slot name="sidebar" />
+        </nav>
+      </details>
+    )
+  }
 
-<div class="main-frame">
   <slot />
 </div>
