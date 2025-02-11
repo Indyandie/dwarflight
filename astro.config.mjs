@@ -17,6 +17,7 @@ export default defineConfig({
         Header: './src/component/overrides/Header.astro',
         ContentPanel: './src/component/overrides/ContentPanel.astro',
         TableOfContents: './src/component/overrides/TableOfContents.astro',
+        PageSidebar: './src/component/overrides/PageSidebar.astro',
       },
       sidebar: [
         {
