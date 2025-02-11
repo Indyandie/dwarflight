@@ -16,6 +16,7 @@ export default defineConfig({
         MobileMenuToggle: './src/component/overrides/MobileMenuToggle.astro',
         Header: './src/component/overrides/Header.astro',
         ContentPanel: './src/component/overrides/ContentPanel.astro',
+        TableOfContents: './src/component/overrides/TableOfContents.astro',
       },
       sidebar: [
         {

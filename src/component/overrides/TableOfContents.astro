@@ -1,0 +1,27 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+
+const { toc, isMobile = false, depth = 0 } = Astro.props
+---
+
+{
+  toc && (
+    <nav>
+      <h2>On this page</h2>
+      <ul class:list={{ isMobile }}>
+        {
+          toc.items.map((heading) => (
+            <li>
+              <a href={'#' + heading.slug}>
+                <span>{heading.text}</span>
+              </a>
+              {
+              //heading.children.length > 0 && <Astro.self toc={heading.children} depth={depth + 1} {isMobile} />
+              }
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  )
+}
