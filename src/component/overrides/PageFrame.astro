@@ -19,7 +19,16 @@ const { hasSidebar } = Astro.props
   <slot name="header" />
 </header>
 
-<div class="bg-amber-900 flex justify-between min-h-full">
+<div
+  class="
+    bg-amber-900 flex justify-between min-h-full
+    [&_main]:grow
+    [&_main]:bg-blue-800
+    [&_main]:min-h-screen
+    [&_main]:px-8
+    [&_main]:py-10
+  "
+>
   {
     hasSidebar && (
       <details open>
