@@ -3,7 +3,21 @@ import type { Props } from '@astrojs/starlight/props'
 import { Icon } from '@astrojs/starlight/components'
 ---
 
-<button class="sticky bottom-0 right-0 ml-auto cursor-pointer">
-  <Icon name="bars" size="2rem" />
-  Sidebar
+<button
+  onclick="toggleLeftSidebar()"
+  class="
+    p-2 ml-auto
+    bg-(--sl-color-white)
+    rounded-full
+    cursor-pointer
+  "
+>
+  <Icon name="bars" size="2rem" color="var(--sl-color-black)" />
 </button>
+
+<script is:inline>
+  function toggleLeftSidebar() {
+    const leftSidebarDetails = document.getElementById('left-sidebar')
+    leftSidebarDetails.open = !leftSidebarDetails.open
+  }
+</script>

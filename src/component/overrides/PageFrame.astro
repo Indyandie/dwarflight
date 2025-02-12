@@ -9,6 +9,7 @@ const { hasSidebar } = Astro.props
 <header
   class="
     sticky top-0
+    z-40
     flex items-center justify-between
     py-2 px-4
     border-b-1
@@ -21,7 +22,7 @@ const { hasSidebar } = Astro.props
 
 <div
   class="
-    bg-amber-900 flex justify-between min-h-full
+    flex justify-between min-h-full
     [&_main]:grow
     [&_main]:bg-blue-800
     [&_main]:min-h-screen
@@ -31,15 +32,33 @@ const { hasSidebar } = Astro.props
 >
   {
     hasSidebar && (
-      <details open>
-        <summary>
-          <MobileMenuToggle {...Astro.props} />
-        </summary>
+      <aside class="z-auto relative">
+        <details
+          id="left-sidebar"
+          name="sidebar"
+          open
+          class="
+            open:[&_summary]:opacity-100
+            [&_summary]:opacity-40
+            [&_summary]:hover:opacity-100
+          "
+        >
+          <summary
+            class="
+              fixed bottom-2
+              left-2
+              w-fit
+              list-none
+            "
+          >
+            <MobileMenuToggle {...Astro.props} />
+          </summary>
 
-        <nav class="bg-blue-900">
-          <slot name="sidebar" />
-        </nav>
-      </details>
+          <nav class="w-3xs p-4">
+            <slot name="sidebar" />
+          </nav>
+        </details>
+      </aside>
     )
   }
 
