@@ -31,34 +31,70 @@ const { hasSidebar } = Astro.props
   "
 >
   {
-    hasSidebar && (
-      <aside class="z-auto relative">
+    hasSidebar &&
+      (
+      <aside
+        class="
+          z-40
+          fixed
+          md:relative
+          overflow-y-scroll
+          md:overflow-y-visible
+          w-screen
+          md:w-auto
+          md:h-auto
+          bg-black
+        "
+      >
         <details
           id="left-sidebar"
           name="sidebar"
-          open
           class="
             open:[&_summary]:opacity-100
-            [&_summary]:opacity-40
-            [&_summary]:hover:opacity-100
+            [&_>_summary]:opacity-40
+            [&_>_summary]:hover:opacity-100
           "
         >
+          <nav
+            class="
+              w-full md:w-3xs p-4 h-md
+              z-8000
+              bg-black
+            "
+          >
+            <slot name="sidebar" />
+          </nav>
           <summary
             class="
               fixed bottom-2
               left-2
               w-fit
               list-none
+              bg-amber-300
             "
           >
             <MobileMenuToggle {...Astro.props} />
           </summary>
-
-          <nav class="w-3xs p-4">
-            <slot name="sidebar" />
-          </nav>
         </details>
       </aside>
+    )
+  }
+
+  {
+    hasSidebar &&
+      (
+      <script is:inline>
+        window.addEventListener('resize', () => {
+    const docWidth = document.documentElement.clientWidth
+    const md = 768
+
+    if (docWidth > md) {
+      document.getElementById('left-sidebar').open = true
+    } else {
+      document.getElementById('left-sidebar').open = false
+    }
+  })
+      </script>
     )
   }
 
