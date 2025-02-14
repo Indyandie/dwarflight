@@ -6,103 +6,112 @@ import type { Props } from '@astrojs/starlight/props'
 const { hasSidebar } = Astro.props
 ---
 
-<header
-  class="
-    sticky top-0
-    z-40
-    flex items-center justify-between
-    py-2 px-4
-    border-b-1
-    border-b-(--sl-color-gray-3)
-    bg-(--sl-color-black)
-  "
->
-  <slot name="header" />
-</header>
-
 <div
   class="
-    flex justify-between min-h-full
-    [&_main]:grow
-    [&_main]:bg-blue-800
-    [&_main]:min-h-screen
-    [&_main]:px-8
-    [&_main]:py-10
+    flex flex-col
+    justify-stretch
+    min-h-dvh
   "
 >
-  {
-    hasSidebar &&
-      (
-      <aside
-        class="
-          z-40
-          fixed
-          md:relative
-          overflow-y-scroll
-          md:overflow-y-visible
-          w-screen
-          md:w-auto
-          md:h-auto
-          bg-black
-        "
-      >
-        <details
-          id="left-sidebar"
-          name="sidebar"
+  <header
+    class="
+      mb-12
+      z-40
+      flex items-center justify-between
+      py-2 px-4
+      border-b-1
+      border-b-(--sl-color-gray-3)
+      bg-(--sl-color-gray-6)
+    "
+  >
+    <slot name="header" />
+  </header>
+
+  <div
+    class="
+      flex place-items-stretch
+      grow
+      h-full
+      [&_main]:grow
+      [&_main]:h-full
+      [&_main]:overflow-y-hidden
+      [&_main]:p-4
+      [&_main]:bg-(--sl-color-black)
+    "
+    style="height: 50%"
+  >
+    {
+      hasSidebar &&
+        (
+        <aside
           class="
-            open:[&_summary]:opacity-100
-            [&_>_summary]:opacity-40
-            [&_>_summary]:hover:opacity-100
+            fixed
+            md:relative
+            overflow-y-scroll
+            md:overflow-y-visible
+            w-screen
+            md:w-auto
+            md:h-auto
+            bg-(--sl-color-gray-6)
           "
         >
-          <nav
+          <details
+            id="left-sidebar"
+            name="sidebar"
             class="
-              w-full md:w-3xs p-4 h-md
-              z-8000
-              bg-black
+              open:[&_summary]:opacity-100
+              [&_>_summary]:opacity-40
+              [&_>_summary]:hover:opacity-100
             "
           >
-            <slot name="sidebar" />
-          </nav>
-          <summary
-            class="
-              fixed bottom-2
-              left-2
-              w-fit
-              list-none
-              bg-amber-300
-            "
-          >
-            <MobileMenuToggle {...Astro.props} />
-          </summary>
-        </details>
-      </aside>
-    )
-  }
-
-  {
-    hasSidebar &&
-      (
-      <script is:inline>
-        function displayLeftSideBar() {
-    const docWidth = document.documentElement.clientWidth
-    const md = 768
-
-    if (docWidth > md) {
-      document.getElementById('left-sidebar').open = true
-    } else {
-      document.getElementById('left-sidebar').open = false
+            <nav
+              class="
+                w-full md:w-3xs p-4 h-md
+                z-8000
+              "
+            >
+              <slot name="sidebar" />
+            </nav>
+            <summary
+              class="
+                fixed bottom-2
+                left-2
+                w-fit
+                list-none
+                bg-amber-300
+              "
+            >
+              <MobileMenuToggle {...Astro.props} />
+            </summary>
+          </details>
+        </aside>
+      )
     }
-  }
 
-  window.addEventListener('resize', () => {
+    {
+      hasSidebar &&
+        (
+        <script is:inline>
+          function displayLeftSideBar() {
+      const docWidth = document.documentElement.clientWidth
+      const md = 768
+
+      if (docWidth > md) {
+        document.getElementById('left-sidebar').open = true
+      } else {
+        document.getElementById('left-sidebar').open = false
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      displayLeftSideBar()
+    })
+
     displayLeftSideBar()
-  })
+        </script>
+      )
+    }
 
-  displayLeftSideBar()
-      </script>
-    )
-  }
-
-  <slot />
+    <slot />
+  </div>
 </div>

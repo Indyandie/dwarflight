@@ -6,8 +6,22 @@ const { toc, isMobile = false, depth = 0 } = Astro.props
 
 {
   toc && (
-    <aside class="p-4 w-3xs hidden lg:block">
-      <h2 class="font-bold pb-2 text-(--sl-color-white)">On this page</h2>
+    <aside
+      class="
+        p-4 w-3xs hidden
+        lg:block
+        h-full
+        bg-(--sl-color-gray-6)
+      "
+    >
+      <h2
+        class="
+          font-bold pb-2
+          text-(--sl-color-white)
+        "
+      >
+        On this page
+      </h2>
       <nav class="pl-4">
         <ul class:list={{ isMobile }}>
           {
