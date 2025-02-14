@@ -84,7 +84,7 @@ const { hasSidebar } = Astro.props
     hasSidebar &&
       (
       <script is:inline>
-        window.addEventListener('resize', () => {
+        function displayLeftSideBar() {
     const docWidth = document.documentElement.clientWidth
     const md = 768
 
@@ -93,7 +93,13 @@ const { hasSidebar } = Astro.props
     } else {
       document.getElementById('left-sidebar').open = false
     }
+  }
+
+  window.addEventListener('resize', () => {
+    displayLeftSideBar()
   })
+
+  displayLeftSideBar()
       </script>
     )
   }
