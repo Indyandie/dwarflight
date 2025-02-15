@@ -13,11 +13,24 @@ import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro'
  */
 // const shouldRenderSearch = config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro'
 ---
-<div class="flex gap-8">
+<div
+  class="
+    flex gap-8
+    w-full
+    justify-between
+    md:w-auto
+  "
+>
   <SiteTitle {...Astro.props} />
   <Search {...Astro.props} />
 </div>
-<div class="flex gap-4 items-center">
+<div
+  class="
+    hidden
+    md:flex
+    gap-4 items-center
+  "
+>
   <SocialIcons {...Astro.props} />
   <ThemeSelect {...Astro.props} />
   <LanguageSelect {...Astro.props} />
