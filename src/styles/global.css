@@ -30,3 +30,11 @@
   --sl-color-gray-7: #f4f7f6;
   --sl-color-black: #ffffff;
 }
+
+.hero {
+  @apply w-5/6 m-auto;
+}
+
+.mobile-preferences {
+  margin-top: 32px;
+}
