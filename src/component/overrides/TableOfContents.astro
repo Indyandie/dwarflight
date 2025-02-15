@@ -11,7 +11,9 @@ const { toc, isMobile = false, depth = 0 } = Astro.props
         p-4 w-3xs hidden
         lg:block
         h-full
-        bg-(--sl-color-gray-6)
+        bg-(--sl-color-black)
+        border-l-1
+        border-(--sl-color-gray-5)
       "
     >
       <h2
@@ -27,7 +29,7 @@ const { toc, isMobile = false, depth = 0 } = Astro.props
           {
             toc.items.map((heading) => (
               <li>
-                <a href={'#' + heading.slug}>
+                <a href={'#' + heading.slug} class="text-(--sl-color-accent-high)">
                   <span>{heading.text}</span>
                 </a>
               </li>
