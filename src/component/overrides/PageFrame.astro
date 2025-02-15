@@ -37,6 +37,7 @@ const { hasSidebar } = Astro.props
       [&_main]:overflow-y-hidden
       [&_main]:p-4
       [&_main]:bg-(--sl-color-black)
+      md:[&_main]:p-8
     "
   >
     {
@@ -65,10 +66,18 @@ const { hasSidebar } = Astro.props
           >
             <nav
               class="
-                w-full md:w-3xs p-4 h-md
+                py-8 px-4
+                w-full h-md
                 z-8000
+                md:w-3xs
+                [&_summary]:bg-(--sl-color-gray-5)
               "
             >
+              <style is:inline>
+                .mobile-preferences {
+                  margin-top: 32px;
+                }
+              </style>
               <slot name="sidebar" />
             </nav>
             <summary
