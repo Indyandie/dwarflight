@@ -20,6 +20,10 @@ export default defineConfig({
         PageSidebar: './src/component/overrides/PageSidebar.astro',
       },
       sidebar: [
+        {
+          label: 'Docs',
+          autogenerate: { directory: 'docs' },
+        },
       ],
       customCss: [
         './src/styles/global.css',
