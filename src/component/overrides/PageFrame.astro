@@ -82,7 +82,6 @@ const { hasSidebar } = Astro.props
                 left-2
                 w-fit
                 list-none
-                bg-amber-300
               "
             >
               <MobileMenuToggle {...Astro.props} />
@@ -107,9 +106,7 @@ const { hasSidebar } = Astro.props
       }
     }
 
-    window.addEventListener('resize', () => {
-      displayLeftSideBar()
-    })
+    // })
 
     displayLeftSideBar()
         </script>
