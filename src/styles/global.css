@@ -39,3 +39,7 @@
 .mobile-preferences {
   margin-top: 32px;
 }
+
+h1#_top {
+  @apply mb-10;
+}
