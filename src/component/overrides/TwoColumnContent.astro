@@ -2,8 +2,17 @@
 import type { Props } from '@astrojs/starlight/props'
 ---
 
-<div class="h-full w-full">
-<slot />
+<div
+  class="
+    grow
+    [&_main]:h-full
+    [&_main]:overflow-scroll
+    [&_main]:p-4
+    [&_main]:bg-(--sl-color-black)
+  "
+  style="height: calc(100dvh - 40px)"
+>
+  <slot />
 </div>
 
 {
