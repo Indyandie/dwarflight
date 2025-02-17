@@ -1,7 +1,5 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
-
-const { toc, isMobile = false, depth = 0 } = Astro.props
+const { toc, isMobile = false, depth = 0 } = Astro.locals.starlightRoute
 ---
 
 {

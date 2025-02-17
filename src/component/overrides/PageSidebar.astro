@@ -1,10 +1,10 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
-
+import type { GetStaticPaths } from 'astro'
 import TableOfContents from './TableOfContents.astro'
+const { toc } = Astro.locals.starlightRoute
 ---
 
-{Astro.props.toc && <TableOfContents {...Astro.props} />}
+{toc && <TableOfContents />}
 
 <style>
   .right-sidebar-panel {

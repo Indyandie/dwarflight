@@ -1,5 +1,6 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
+// frontmatter
+const { toc } = Astro.locals.starlightRoute
 ---
 
 <div
@@ -19,7 +20,7 @@ import type { Props } from '@astrojs/starlight/props'
 </div>
 
 {
-  Astro.props.toc && (
+  toc && (
     <aside class="w-auto">
       <slot name="right-sidebar" />
     </aside>

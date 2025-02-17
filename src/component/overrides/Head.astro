@@ -1,6 +1,5 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
-const { siteTitle: title, entry } = Astro.props
+const { siteTitle: title, entry } = Astro.locals.starlightRoute
 const { title: entryTitle } = entry.data
 
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined

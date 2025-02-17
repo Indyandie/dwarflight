@@ -1,9 +1,7 @@
 ---
-// import MobileMenuToggle from '@astrojs/starlight/components/MobileMenuToggle.astro'
 import MobileMenuToggle from './MobileMenuToggle.astro'
-import type { Props } from '@astrojs/starlight/props'
 
-const { hasSidebar } = Astro.props
+const { hasSidebar } = Astro.locals.starlightRoute
 ---
 
 <div
