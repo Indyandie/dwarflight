@@ -4,10 +4,13 @@ import type { Props } from '@astrojs/starlight/props'
 
 <div
   class="
-    grow
+    p-4
+    w-screen
+    overflow-scroll
+    md:w-full
+    md:p-8
     [&_main]:h-full
-    [&_main]:overflow-scroll
-    [&_main]:p-4
+    [&_main]:w-auto
     [&_main]:bg-(--sl-color-black)
   "
   style="height: calc(100dvh - 68px)"
@@ -17,7 +20,7 @@ import type { Props } from '@astrojs/starlight/props'
 
 {
   Astro.props.toc && (
-    <aside>
+    <aside class="w-auto">
       <slot name="right-sidebar" />
     </aside>
   )
