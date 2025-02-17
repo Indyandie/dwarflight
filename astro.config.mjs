@@ -2,7 +2,10 @@ import { defineConfig } from 'astro/config'
 import starlight from '@astrojs/starlight'
 import tailwindcss from '@tailwindcss/vite'
 
+const siteURl = 'https://dwarf.indieandy.cc/'
+
 export default defineConfig({
+  site: siteURl,
   integrations: [
     starlight({
       title: 'Dwarflight',
