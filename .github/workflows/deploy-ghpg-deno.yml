@@ -1,0 +1,50 @@
+name: Deploy to GitHub pages (Deno Runtime)
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - src/**
+      - astro.config.mjs
+      - deno.json
+      - deno.lock
+      - public/**
+      - .github/workflow/**
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v4
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.1.9
+      - name: Run install
+        run: deno install --allow-scripts
+      - name: Run Build
+        run: deno run -A build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: "./dist/"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
