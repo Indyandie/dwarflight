@@ -1,0 +1,63 @@
+---
+title: Cards
+# template: splash
+sidebar:
+  order: 20
+---
+
+import { Card, LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+## Card
+
+<Card title="Card">
+  Card description.
+</Card>
+
+### Icon Card
+
+<Card title="Icon Card" icon="star">
+  Card description.
+</Card>
+
+## Link Cards
+
+<LinkCard
+  title="Link Card"
+  href="/docs/overrides/head/"
+  description="Link Card description"
+/>
+
+## Card Grid
+
+<CardGrid>
+  <Card title="Check this out" icon="open-book">
+    Interesting content you want to highlight.
+  </Card>
+  <Card title="Other feature" icon="information">
+    More information you want to share.
+  </Card>
+</CardGrid>
+
+<CardGrid>
+  <LinkCard
+    title="Link Card"
+    href="/docs/overrides/head/"
+    description="Link Card description"
+  />
+  <LinkCard
+    title="Link Card"
+    href="/docs/overrides/head/"
+    description="Link Card description"
+  />
+</CardGrid>
+
+### Staggered
+
+<CardGrid stagger="true">
+  <Card title="Check this out" icon="open-book">
+    Interesting content you want to highlight.
+  </Card>
+  <Card title="Other feature" icon="information">
+    More information you want to share.
+  </Card>
+</CardGrid>
