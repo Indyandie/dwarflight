@@ -1,40 +1,20 @@
 ---
-const { toc, isMobile = false, depth = 0 } = Astro.locals.starlightRoute
+const {
+  toc,
+  isMobile = false,
+  depth = 0,
+} = Astro.props
 ---
 
-{
-  toc && (
-    <aside
-      class="
-        p-4 w-3xs hidden
-        lg:block
-        h-full
-        bg-(--sl-color-black)
-        border-l-1
-        border-(--sl-color-gray-5)
-      "
-    >
-      <h2
-        class="
-          font-bold pb-2
-          text-(--sl-color-white)
-        "
-      >
-        On this page
-      </h2>
-      <nav class="pl-4">
-        <ul class:list={{ isMobile }}>
-          {
-            toc.items.map((heading) => (
-              <li>
-                <a href={'#' + heading.slug} class="text-(--sl-color-accent-high)">
-                  <span>{heading.text}</span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-    </aside>
-  )
-}
+<ul>
+  {
+    toc.map((heading) => (
+      <li>
+        <a href={'#' + heading.slug} class="aria-curr:text-amber-300">
+          <span>{heading.text}</span>
+        </a>
+        {heading.children.length > 0 && <Astro.self toc={heading.children} depth={depth + 1} {isMobile} />}
+      </li>
+    ))
+  }
+</ul>

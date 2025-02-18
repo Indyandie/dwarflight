@@ -1,41 +1,33 @@
 ---
-import type { GetStaticPaths } from 'astro'
 import TableOfContents from './TableOfContents.astro'
 const { toc } = Astro.locals.starlightRoute
 ---
 
-{toc && <TableOfContents />}
-
-<style>
-  .right-sidebar-panel {
-    padding: 1rem var(--sl-sidebar-pad-x);
-  }
-  .sl-container {
-    width: calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x));
-  }
-  .right-sidebar-panel :global(h2) {
-    color: var(--sl-color-white);
-    font-size: var(--sl-text-h5);
-    font-weight: 600;
-    line-height: var(--sl-line-height-headings);
-    margin-bottom: 0.5rem;
-  }
-  .right-sidebar-panel :global(:where(a)) {
-    display: block;
-    font-size: var(--sl-text-xs);
-    text-decoration: none;
-    color: var(--sl-color-gray-3);
-    overflow-wrap: anywhere;
-  }
-  .right-sidebar-panel :global(:where(a):hover) {
-    color: var(--sl-color-white);
-  }
-  @media (min-width: 72rem) {
-    .sl-container {
-      max-width: calc(
-        (100vw - var(--sl-sidebar-width) - 2 * var(--sl-content-pad-x) - 2 * var(--sl-sidebar-pad-x)) * 0.25
-        /* MAGIC NUMBER 🥲 */
-      );
-    }
-  }
-</style>
+{
+  toc && (
+    <aside
+      class="
+        p-4
+        w-[14rem]
+        hidden
+        lg:block
+        h-full
+        bg-(--sl-color-black)
+        border-l-1
+        border-(--sl-color-gray-5)
+      "
+    >
+      <h2
+        class="
+          font-bold pb-2
+          text-(--sl-color-white)
+        "
+      >
+        On this page
+      </h2>
+      <nav class="pl-4">
+        <TableOfContents toc={toc.items} />
+      </nav>
+    </aside>
+  )
+}
