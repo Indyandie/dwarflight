@@ -5,14 +5,22 @@ import { Icon } from '@astrojs/starlight/components'
 <button
   onclick="toggleLeftSidebar()"
   class="
+    w-[44px]
+    h-[44px]
     p-2 ml-auto
     bg-(--sl-color-white)
     rounded-full
     cursor-pointer
     fixed bottom-2 left-2
+    flex items-center justify-center
   "
 >
-  <Icon name="bars" size="2rem" color="var(--sl-color-black)" />
+  <span class="bars">
+    <Icon name="bars" size="1.4rem" color="var(--sl-color-black)" />
+  </span>
+  <span class="close">
+    <Icon name="close" size="1.4rem" color="var(--sl-color-black)" />
+  </span>
 </button>
 
 <script is:inline>

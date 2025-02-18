@@ -57,9 +57,14 @@ const { hasSidebar } = Astro.locals.starlightRoute
             name="sidebar"
             class="
               w-fit
-              open:[&_summary]:opacity-100
               [&_>_summary]:opacity-40
               [&_>_summary]:hover:opacity-100
+              open:[&_summary]:opacity-100
+              open:[&_.bars]:hidden
+              [&_.close]:hidden
+              open:[&_.close]:block
+              open:[&_button]:hover:bg-(--sl-color-accent-high)
+              open:[&_button]:bg-(--sl-color-gray-2)
             "
           >
             <nav
@@ -80,6 +85,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
                 z-8000
                 left-2
                 w-fit
+                bg-amber-400
                 list-none
               "
             >
