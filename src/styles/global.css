@@ -49,3 +49,7 @@
 h1#_top {
   @apply mb-10;
 }
+
+details#left-sidebar summary::-webkit-details-marker {
+  display: none;
+}
