@@ -40,9 +40,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
         <aside
           class="
             fixed top-0 left-0
-            h-auto
-            h-max-screen
-            h-min-screen
+            h-fit
             w-auto
             bg-(--sl-color-gray-6)
             z-1000
@@ -50,7 +48,6 @@ const { hasSidebar } = Astro.locals.starlightRoute
             md:h-auto
             md:w-auto
           "
-          style="height: calc(100dvh - 68px)"
         >
           <details
             id="left-sidebar"
@@ -67,11 +64,25 @@ const { hasSidebar } = Astro.locals.starlightRoute
               open:[&_button]:bg-(--sl-color-gray-2)
             "
           >
+            <summary
+              class="
+                fixed
+                bottom-2 left-2
+                z-8000
+                w-fit
+                list-none
+              "
+            >
+              <MobileMenuToggle />
+            </summary>
             <nav
               class="
-                py-8 px-4
-                w-screen
-                h-md
+                flex flex-col justify-between content-between 
+                w-dvw
+                h-dvh
+                pt-8 px-2
+                pb-[72px]
+                md:h-auto
                 md:w-[16rem]
                 md:p-2
                 [&_summary]:bg-(--sl-color-gray-5)
@@ -79,18 +90,6 @@ const { hasSidebar } = Astro.locals.starlightRoute
             >
               <slot name="sidebar" />
             </nav>
-            <summary
-              class="
-                fixed bottom-2
-                z-8000
-                left-2
-                w-fit
-                bg-amber-400
-                list-none
-              "
-            >
-              <MobileMenuToggle {...Astro.props} />
-            </summary>
           </details>
         </aside>
       )

@@ -43,7 +43,7 @@
 }
 
 .mobile-preferences {
-  margin-top: 32px;
+  @apply mt-[32px] bg-(--sl-color-black) py-4 px-6 rounded-md;
 }
 
 h1#_top {
