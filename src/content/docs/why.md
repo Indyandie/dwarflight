@@ -1,10 +1,10 @@
 ---
-title: Getting Started
+title: Why
 sidebar:
   order: 1
 ---
 
-# Why?
+# What the f**k is this?
 
 This repo _aims_ to **simplify** _some_ Starlight components to make customization easier with HTML, Tailwind/CSS, and vanilla JS.
 
@@ -16,5 +16,6 @@ This repo _aims_ to **simplify** _some_ Starlight components to make customizati
 - [`MobileMenuToggle`](/docs/overrides/mobile-menu-toggle/)
 - [`TwoColumnContent`](/docs/overrides/two-column-content/)
 - [`ContentPanel`](/docs/overrides/content-panel/)
+- [`PageTitle`](/docs/overrides/page-title/)
 - [`PageSidebar`](/docs/overrides/page-sidebar/)
 - [`TableOfContents`](/docs/overrides/table-of-contents/)
