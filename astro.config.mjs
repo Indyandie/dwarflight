@@ -24,9 +24,14 @@ export default defineConfig({
         PageSidebar: './src/component/overrides/PageSidebar.astro',
       },
       sidebar: [
+        { label: 'Why?', link: 'why/' },
         {
-          label: 'Docs',
-          autogenerate: { directory: 'docs' },
+          label: 'overrides',
+          autogenerate: { directory: 'docs/overrides' },
+        },
+        {
+          label: 'Playground',
+          autogenerate: { directory: 'docs/playground' },
         },
       ],
       customCss: [
