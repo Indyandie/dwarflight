@@ -1,10 +1,11 @@
 /* enable everything */
 @import "tailwindcss";
 
-/* disable preflight */
-/* @layer theme, base, components, utilities; */
-/* @import "tailwindcss/theme.css" layer(theme); */
-/* @import "tailwindcss/utilities.css" layer(utilities); */
+/* disable preflight 
+@layer theme, base, components, utilities; 
+@import "tailwindcss/theme.css" layer(theme); 
+@import "tailwindcss/utilities.css" layer(utilities);
+*/
 
 /* Dark mode colors. */
 :root {
@@ -44,10 +45,6 @@
 
 .mobile-preferences {
   @apply mt-[32px] bg-(--sl-color-black) py-4 px-6 rounded-md;
-}
-
-h1#_top {
-  @apply mb-10;
 }
 
 details#left-sidebar summary::-webkit-details-marker {
