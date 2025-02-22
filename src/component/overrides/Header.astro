@@ -16,10 +16,13 @@ import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro'
     w-full
     justify-between
     md:w-auto
+    [&_a.site-title.sl-flex_span]:text-(--sl-color-white)
   "
 >
   <SiteTitle />
-  <Search />
+  <div>
+    <Search />
+  </div>
 </div>
 <div
   class="

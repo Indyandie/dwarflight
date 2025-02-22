@@ -9,6 +9,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Dwarflight',
+      logo: {
+        src: './src/assets/twemoji/dwarf.svg',
+      },
       social: {
         github: 'https://github.com/indyandie/dwarflight',
       },
