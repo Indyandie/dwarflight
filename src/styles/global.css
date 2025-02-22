@@ -50,3 +50,18 @@
 details#left-sidebar summary::-webkit-details-marker {
   display: none;
 }
+
+.sl-markdown-content {
+  ul:has(> li),
+  ol:has(> li) {
+    @apply list-inside ml-2;
+  }
+
+  ul > li {
+    @apply list-disc;
+  }
+
+  ol > li {
+    @apply list-decimal;
+  }
+}
