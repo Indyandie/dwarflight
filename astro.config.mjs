@@ -10,7 +10,7 @@ export default defineConfig({
     starlight({
       title: 'Dwarflight',
       logo: {
-        src: './src/assets/twemoji/dwarf.svg',
+        src: './src/assets/twemoji/dwarf-opt.svg',
       },
       social: {
         github: 'https://github.com/indyandie/dwarflight',
