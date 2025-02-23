@@ -55,6 +55,19 @@ details#left-sidebar summary::-webkit-details-marker {
   display: none;
 }
 
+.sl-banner {
+  @apply bg-(--sl-color-accent-low) text-(--sl-color-white) text-lg;
+  @apply p-4 md:p-5;
+
+  * {
+    @apply text-(--sl-color-white) font-bold;
+  }
+
+  a * {
+    @apply text-(--sl-color-accent-high);
+  }
+}
+
 /* Markdown */
 .sl-markdown-content {
   @apply p-4 md:p-8;
