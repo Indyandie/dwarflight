@@ -57,6 +57,8 @@ details#left-sidebar summary::-webkit-details-marker {
 
 /* Markdown */
 .sl-markdown-content {
+  @apply p-4 md:p-8;
+
   ul:has(> li),
   ol:has(> li) {
     @apply list-inside ml-2;
