@@ -14,12 +14,12 @@ This repo _aims_ to **simplify** _some_ Starlight components to make customizati
 
 ## Overrides
 
-- [`Head`](/docs/overrides/head/)
-- [`PageFrame`](/docs/overrides/page-frame/)
-- [`Header`](/docs/overrides/header/)
-- [`MobileMenuToggle`](/docs/overrides/mobile-menu-toggle/)
-- [`TwoColumnContent`](/docs/overrides/two-column-content/)
-- [`ContentPanel`](/docs/overrides/content-panel/)
-- [`PageTitle`](/docs/overrides/page-title/)
-- [`PageSidebar`](/docs/overrides/page-sidebar/)
-- [`TableOfContents`](/docs/overrides/table-of-contents/)
+- [`Head`](/overrides/head/)
+- [`PageFrame`](/overrides/page-frame/)
+- [`Header`](/overrides/header/)
+- [`MobileMenuToggle`](/overrides/mobile-menu-toggle/)
+- [`TwoColumnContent`](/overrides/two-column-content/)
+- [`ContentPanel`](/overrides/content-panel/)
+- [`PageTitle`](/overrides/page-title/)
+- [`PageSidebar`](/overrides/page-sidebar/)
+- [`TableOfContents`](/overrides/table-of-contents/)

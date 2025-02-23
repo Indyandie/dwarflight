@@ -30,11 +30,11 @@ export default defineConfig({
         { label: 'Why?', link: 'why/' },
         {
           label: 'overrides',
-          autogenerate: { directory: 'docs/overrides' },
+          autogenerate: { directory: 'overrides' },
         },
         {
           label: 'Playground',
-          autogenerate: { directory: 'docs/playground' },
+          autogenerate: { directory: 'playground' },
         },
       ],
       customCss: [
