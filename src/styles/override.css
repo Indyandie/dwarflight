@@ -37,7 +37,7 @@ details#left-sidebar summary::-webkit-details-marker {
     @apply list-inside ml-2;
   }
 
-  ul > li {
+  ul:not(.contains-task-list) > li {
     @apply list-disc;
   }
 
