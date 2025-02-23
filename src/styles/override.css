@@ -45,3 +45,7 @@ details#left-sidebar summary::-webkit-details-marker {
     @apply list-decimal;
   }
 }
+
+main > div > footer {
+  @apply p-4 md:p-8;
+}
