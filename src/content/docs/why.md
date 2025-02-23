@@ -3,7 +3,7 @@ title: Why
 banner:
   content: |
     Check out
-    <a href="https://lucero.indieandy.cc"><strong>Lucero</strong></a>!
+    <a href="https://lucero.indieandy.cc" target="_blank"><strong>Lucero</strong></a>!
 sidebar:
   order: 1
 ---
