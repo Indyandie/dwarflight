@@ -30,5 +30,7 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
   <!-- TODO: OG & Twitter -->
 
   <meta name="generator" content={Astro.generator} />
+
+  <script is:inline src="/js/htmx.js"></script>
   <title>{(entryTitle && entryTitle !== title ? `${entryTitle} | ` : '') + title}</title>
 </head>
