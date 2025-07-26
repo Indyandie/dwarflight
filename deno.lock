@@ -1,6 +1,7 @@
 {
   "version": "5",
   "specifiers": {
+    "npm:@astrojs/starlight-tailwind@^4.0.1": "4.0.1_@astrojs+starlight@0.35.1__astro@5.12.3___vite@6.3.5____picomatch@4.0.3___zod@3.25.76__@types+node@22.15.15_tailwindcss@4.1.11_astro@5.12.3__vite@6.3.5___picomatch@4.0.3__zod@3.25.76__@types+node@22.15.15_@types+node@22.15.15",
     "npm:@astrojs/starlight@~0.35.1": "0.35.1_astro@5.12.3__vite@6.3.5___picomatch@4.0.3__zod@3.25.76_@types+node@22.15.15",
     "npm:@tailwindcss/vite@^4.1.11": "4.1.11_vite@7.0.6__picomatch@4.0.3_@types+node@22.15.15",
     "npm:@types/node@*": "22.15.15",
@@ -98,6 +99,13 @@
         "sitemap",
         "stream-replace-string",
         "zod"
+      ]
+    },
+    "@astrojs/starlight-tailwind@4.0.1_@astrojs+starlight@0.35.1__astro@5.12.3___vite@6.3.5____picomatch@4.0.3___zod@3.25.76__@types+node@22.15.15_tailwindcss@4.1.11_astro@5.12.3__vite@6.3.5___picomatch@4.0.3__zod@3.25.76__@types+node@22.15.15_@types+node@22.15.15": {
+      "integrity": "sha512-AOOEWTGqJ7fG66U04xTmZQZ40oZnUYe4Qljpr+No88ozKywtsD1DiXOrGTeHCnZu0hRtMbRtBGB1fZsf0L62iw==",
+      "dependencies": [
+        "@astrojs/starlight@0.35.1_astro@5.12.3__vite@6.3.5___picomatch@4.0.3__zod@3.25.76_@types+node@22.15.15",
+        "tailwindcss"
       ]
     },
     "@astrojs/starlight@0.35.1_astro@5.12.3__vite@6.3.5___picomatch@4.0.3__zod@3.25.76": {
@@ -3451,6 +3459,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@astrojs/starlight-tailwind@^4.0.1",
         "npm:@astrojs/starlight@~0.35.1",
         "npm:@tailwindcss/vite@^4.1.11",
         "npm:astro@^5.12.3",
