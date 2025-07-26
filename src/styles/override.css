@@ -34,11 +34,15 @@ details#left-sidebar summary::-webkit-details-marker {
 
   ul:has(> li),
   ol:has(> li) {
-    @apply list-inside ml-2;
+    @apply list-inside;
   }
 
   ul:not(.contains-task-list) > li {
     @apply list-disc;
+  }
+
+  ul.contains-task-list > li {
+    @apply list-none;
   }
 
   ol > li {
