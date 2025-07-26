@@ -12,9 +12,9 @@ export default defineConfig({
       logo: {
         src: './src/assets/twemoji/dwarf-opt.svg',
       },
-      social: {
-        github: 'https://github.com/indyandie/dwarflight',
-      },
+      social: [
+        { icon: 'github', label: 'github', href: 'https://github.com/indyandie/dwarflight' },
+      ],
       components: {
         Head: './src/component/overrides/Head.astro',
         PageFrame: './src/component/overrides/PageFrame.astro',
