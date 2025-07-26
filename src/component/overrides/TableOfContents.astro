@@ -6,11 +6,23 @@ const {
 } = Astro.props
 ---
 
-<ul class="[&_ul]:pl-4">
+<ul class="pl-2 [&_ul]:pl-4 list-none">
   {
     toc.map((heading) => (
-      <li class="font-bold pb-1 [&_li]:font-normal">
-        <a href={'#' + heading.slug} class="aria-curr:text-amber-300">
+      <li
+        class="
+          font-bold
+          pb-1 [&_li]:font-normal
+          [&_a]:text-sm
+        "
+      >
+        <a
+          href={'#' + heading.slug}
+          class="
+            text-(----sl-color-black)
+            aria-curr:text-amber-300
+          "
+        >
           <span>{heading.text}</span>
         </a>
         {heading.children.length > 0 && <Astro.self toc={heading.children} depth={depth + 1} {isMobile} />}
